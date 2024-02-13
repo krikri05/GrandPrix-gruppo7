@@ -7,11 +7,11 @@ package com.mycompany.grandprix7;
 
 /**
  *
- * @author Kristian
+ * @author 
  */
 public class GrandPrix7 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        private int scelta;
     }
 }
