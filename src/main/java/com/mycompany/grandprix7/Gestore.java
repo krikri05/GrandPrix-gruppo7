@@ -9,6 +9,7 @@ import java.util.*;
 import java.lang.Math;
 
 
+
 public class Gestore {
     public static void main(String[] args) {
         visualizza();

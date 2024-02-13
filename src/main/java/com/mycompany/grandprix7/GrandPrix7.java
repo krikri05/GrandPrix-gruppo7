@@ -5,10 +5,7 @@
 
 package com.mycompany.grandprix7;
 
-/**
- *
- * @author 
- */
+
 public class GrandPrix7 {
 
     public static void main(String[] args) {

@@ -4,10 +4,7 @@
  */
 package com.mycompany.grandprix7;
 
-/**
- *
- * @author account
- */
+
 public class Circuito {
   private int ngiri;
   private double lunghezzaCircuito;

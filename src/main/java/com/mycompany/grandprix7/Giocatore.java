@@ -6,6 +6,7 @@ package com.mycompany.grandprix7;
 
 import java.util.ArrayList;
 
+
 public class Giocatore {
     private String username;
     private int password;
