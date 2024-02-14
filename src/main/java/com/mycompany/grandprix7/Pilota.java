@@ -8,7 +8,7 @@ package com.mycompany.grandprix7;
  *
  * @author Kristian
  */
-public class Pilota extends Thread{
+public class Pilota{
     private String nome;
     private String cognome;
     private int numeroPilota;

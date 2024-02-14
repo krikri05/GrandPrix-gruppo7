@@ -6,15 +6,51 @@ package com.mycompany.grandprix7;
 
 
 public class Circuito {
-  private int ngiri;
+  private String nome;
   private double lunghezzaCircuito;
-  private int sceltaCircuito;
+  private int nGiri;
   private int nPit;
 
-  public Circuito(int ngiri, double lunghezzaCircuito ,int sceltaCircuito,int nPit) {
-    this.ngiri = ngiri;
-	  this.lunghezzaCircuito = lunghezzaCircuito;
-    this.sceltaCircuito = sceltaCircuito;
-    this.nPit = nPit;
-  }
+    public Circuito(String nome, double lunghezzaCircuito, int nGiri, int nPit) {
+        this.nome = nome;
+        this.lunghezzaCircuito = lunghezzaCircuito;
+        this.nGiri = nGiri;
+        this.nPit = nPit;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getLunghezzaCircuito() {
+        return lunghezzaCircuito;
+    }
+
+    public void setLunghezzaCircuito(double lunghezzaCircuito) {
+        this.lunghezzaCircuito = lunghezzaCircuito;
+    }
+
+    public int getnGiri() {
+        return nGiri;
+    }
+
+    public void setnGiri(int nGiri) {
+        this.nGiri = nGiri;
+    }
+
+    public int getnPit() {
+        return nPit;
+    }
+
+    public void setnPit(int nPit) {
+        this.nPit = nPit;
+    }
+  
+  
+
+  
 }
