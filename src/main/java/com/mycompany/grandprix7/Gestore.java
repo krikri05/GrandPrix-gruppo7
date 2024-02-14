@@ -13,6 +13,10 @@ import java.lang.Math;
 public class Gestore {
     public static void main(String[] args) {
         visualizza();
+        switch(scelta) {
+            case "1" :
+                break;
+        }
     }
 
     public static void visualizza() {
@@ -20,5 +24,6 @@ public class Gestore {
         System.out.println("*************GRANPRIX****************\ncosa vuoi fare:\n 1-registra un giocatore\n 2-accedi\n");
         System.out.println("Inserisci il valore per scelta:");
         int scelta = input.nextInt();
+        
     }
 }

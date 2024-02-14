@@ -10,11 +10,30 @@ import java.util.ArrayList;
 public class Giocatore {
     private String username;
     private int password;
-    private ArrayList<String> arrayList;
+    private ArrayList<String> automobili;
         
     public Giocatore(final String username, final int password) {
         this.username = username;
         this.password = password;
-        this.arrayList = new ArrayList();
+        this.automobili = new ArrayList();
+        
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
+    }
+    
+    
 }
