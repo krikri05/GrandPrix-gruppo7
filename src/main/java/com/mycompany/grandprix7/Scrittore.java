@@ -18,7 +18,6 @@ public class Scrittore implements Runnable {
   String nomeFile;
   String username;
   String password;
-  String fileCopia;
 
 
   public Scrittore(String nomeFile, String username, String password) {
