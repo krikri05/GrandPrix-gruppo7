@@ -8,6 +8,8 @@ import java.io.*;
 import java.util.*;
 import java.lang.Math;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -43,7 +45,7 @@ public class Gestore {
         System.out.println("1)Accedi con username e password*****************************************************");
         System.out.println("2)Impostazioni Circuito**************************************************************");
         System.out.println("3)***********************************************************************************");
-        int scelta = input.nextInt();
+        int sc = input.nextInt();
         
     }
     
@@ -92,10 +94,25 @@ public class Gestore {
     
     Lettore l = new Lettore("user.json");
     l.start();
+    Scanner input = new Scanner(System.in);
+    System.out.println("inserisci un usarname per accedere:");
+    String username=input.nextLine();
+
+    System.out.println("inserisci una password:");
+    String password=input.nextLine();
+    String passwordC=m.cifra(password);
+   
     
+    Scrittore scrittore = new Scrittore("user.json", username, passwordC);
+    Thread threadScrittore = new Thread(scrittore);
+    threadScrittore.start();
+
+        try {
+            threadScrittore.join();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Gestore.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
-    
-        
     
     }
 }
