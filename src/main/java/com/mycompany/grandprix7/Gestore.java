@@ -22,7 +22,7 @@ public class Gestore {
     s = sc.nextInt();
     switch (s) {
       case 1:
-       
+        accedi();
         break;
       case 2:
         impostazioniCircuito();
@@ -51,8 +51,6 @@ public class Gestore {
         
        Scanner scanner1 = new Scanner(System.in);
        
-      
-    
         System.out.println("Scrivi il nome del circuito: ");
         String nomeCircuito = scanner1.nextLine();
         System.out.println("Scegli la lunghezza del circuito(in Km): ");
@@ -65,6 +63,39 @@ public class Gestore {
         
         
         System.out.println("Impostazioni circuito aggiornate!");
+    
+    }
+    
+    public static void accedi() {
+    Matrice m = new Matrice("VIGENERE");
+    Vigenere v = new Vigenere(0,12,0,12,m);
+    Vigenere v1 = new Vigenere(12,26,0,12,m);
+    Vigenere v2 = new Vigenere(0,12,0,12,m);
+    Vigenere v3 = new Vigenere(12,26,12,26,m);
+    Thread t = new Thread(v);
+    Thread t1 = new Thread(v1);
+    Thread t2 = new Thread(v2);
+    Thread t3 = new Thread(v3);
+    
+    t.start();
+    t1.start();
+    t2.start();
+    t3.start();
+    try{
+    t.join();
+    t1.join();
+    t2.join();
+    t3.join();
+    }catch(InterruptedException ex){
+    System.err.println("Errore nel metodo join!");
+    }
+    
+    Lettore l = new Lettore("user.json");
+    l.start();
+    
+    
+    
+        
     
     }
 }
