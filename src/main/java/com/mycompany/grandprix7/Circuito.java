@@ -4,6 +4,8 @@
  */
 package com.mycompany.grandprix7;
 
+import java.util.Scanner;
+
 
 public class Circuito {
   private String nome;
@@ -17,40 +19,25 @@ public class Circuito {
         this.nGiri = nGiri;
         this.nPit = nPit;
     }
-
-    public String getNome() {
-        return nome;
+    public static void impostazioniCircuito() {
+        
+       Scanner scanner1 = new Scanner(System.in);
+       //if(accesso=true){
+           System.out.println("prima di poter accedere a questa sezione devi aver conseguito accesso");
+       //}else{
+           System.out.println("Scrivi il nome del circuito: ");
+           String nomeCircuito = scanner1.nextLine();
+           System.out.println("Scegli la lunghezza del circuito(in Km): ");
+           Double lunghezzaCircuito = scanner1.nextDouble();
+           System.out.println("Imposta il numero di giri: ");
+           int nGiri = scanner1.nextInt();
+           System.out.println("Imposta il numero di pit stop: ");
+           int nPit = scanner1.nextInt();
+           Circuito circuito= new Circuito(nomeCircuito,lunghezzaCircuito, nGiri,nPit);
+      // }
+        
+        
+        
+    
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getLunghezzaCircuito() {
-        return lunghezzaCircuito;
-    }
-
-    public void setLunghezzaCircuito(double lunghezzaCircuito) {
-        this.lunghezzaCircuito = lunghezzaCircuito;
-    }
-
-    public int getnGiri() {
-        return nGiri;
-    }
-
-    public void setnGiri(int nGiri) {
-        this.nGiri = nGiri;
-    }
-
-    public int getnPit() {
-        return nPit;
-    }
-
-    public void setnPit(int nPit) {
-        this.nPit = nPit;
-    }
-  
-  
-
-  
 }
