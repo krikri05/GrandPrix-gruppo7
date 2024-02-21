@@ -75,4 +75,35 @@ public static void accedi() {
             Logger.getLogger(Gestore.class.getName()).log(Level.SEVERE, null, ex);
         }
 }
+
+
+public void auto(){
+     Scanner input = new Scanner(System.in);
+     System.out.println("insersci il numero d'auto che vuoi far partecipare:");
+     int nAuto= Integer.valueOf(input.nextLine());
+     
+     for(int i=0; i<nAuto;i++){
+         System.out.println("inserisci la marca dell'automobile:");
+         String marca=input.nextLine();
+          System.out.println("inserisci il colore che vuoi assegnare al automobile:");
+         String colore=input.nextLine();
+         System.out.println("inserisci il numero che utilizzera l auromobile e il pilota:");
+         int numero= Integer.valueOf(input.nextLine());
+         System.out.println("ora imposteremo una velocità....... ");
+         int velocita=(int) Math.random() * 1000 + 1;
+         System.out.println("inserisci il nome del pilota:");
+         String nome=input.nextLine();
+         System.out.println("inserisci il cognome:");
+         String cognome= input.nextLine();
+         System.out.println("inserisci eta del pilota:");
+         int eta= Integer.valueOf(input.nextLine());
+         
+         Automobile auto = new Automobile(marca,  numero, velocita, colore );
+         Pilota pilota= new Pilota(nome, cognome, numero, eta);
+         Automobile.add(auto);
+         Pilota.add(pilota);
+         
+         
+     }
+    }
 }

@@ -4,26 +4,24 @@
  */
 package com.mycompany.grandprix7;
 
-/**
- *
- * @author Kristian
- */
+
 public class Automobile extends Thread {
-    private String nome;
-    private int velocita;
+
+    static void add(Automobile auto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private String marca;
-    private Boolean safetyCar;
+    private int velocita;
+    private int numero;
+    private String colore;
 
-    public Automobile(String nome, int velocita, String marca, Boolean safetyCar) {
-        this.nome = nome;
-        this.velocita = velocita;
+    public Automobile(String marca,int numero,int velocita,  String colore) {
         this.marca = marca;
-        this.safetyCar = safetyCar;
+        this.velocita = velocita;
+        this.numero= numero;
+        this.colore=colore;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public void setVelocita(int velocita) {
         this.velocita = velocita;
@@ -33,9 +31,6 @@ public class Automobile extends Thread {
         this.marca = marca;
     }
 
-    public void setSafetyCar(Boolean safetyCar) {
-        this.safetyCar = safetyCar;
-    }
     
     @Override
     public void run() {
