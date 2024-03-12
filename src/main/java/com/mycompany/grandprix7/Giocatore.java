@@ -10,16 +10,16 @@ import java.util.logging.Logger;
 public class Giocatore {
     private String username;
     private int password;
-    private static ArrayList<Automobile> auto;
-    private ArrayList<Pilota> pilota;
-    private static boolean accesso=false;
+   ArrayList<Automobile> listaAuto = new ArrayList<>();
+   ArrayList<Pilota> listaPiloti = new ArrayList<>();
+   private static boolean accesso=false;
   
         
     public Giocatore(final String username, final int password) {
         this.username = username;
         this.password = password;
-        this.auto= new ArrayList();
-        this.pilota= new ArrayList();
+        this.listaAuto= new ArrayList();
+        this.listaPiloti= new ArrayList();
         this.accesso= accesso;
         
     }
@@ -60,16 +60,19 @@ public static void accedi() {
     String passwordC=m.cifra(verificaP);
  
 
-    
     Scrittore scrittore = new Scrittore("user.json", verificaU, passwordC);
     Thread threadScrittore = new Thread(scrittore);
     threadScrittore.start();
 
         try {
-            Thread.sleep(2000);
             threadScrittore.join();
              accesso=true;
-            System.out.println("\nStiamo effettuando l'accesso un secondo....\n");
+              System.out.print("\nStiamo effettuando l'accesso un secondo");
+             for(int i=0; i<6;i++){
+                 Thread.sleep(500);
+                 System.out.print(". ");
+                 
+             }
             
         } catch (InterruptedException ex) {
             Logger.getLogger(Gestore.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,7 +83,7 @@ public static void accedi() {
         return accesso;
     }
     
-    public void auto(){
+    public static void autoepilota(){
      Scanner input = new Scanner(System.in);
      System.out.println("insersci il numero d'auto che vuoi far partecipare:");
      int nAuto= Integer.valueOf(input.nextLine());
@@ -101,12 +104,11 @@ public static void accedi() {
          
          Automobile auto = new Automobile(marca, colore , numero);
          Pilota pilota= new Pilota(nome, cognome, numero, eta);
-         Automobile.add(auto);
-         Pilota.add(pilota);
          
           
      }
     }
-  
+    
+        
     
 }

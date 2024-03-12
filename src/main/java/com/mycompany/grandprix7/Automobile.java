@@ -20,11 +20,19 @@ public class Automobile extends Thread {
         this.colore = colore;
         this.nAuto=nAuto;
     }
-    static void add(Automobile auto) {
-        
+
+    public String getMarca() {
+        return marca;
     }
 
- 
+    public String getColore() {
+        return colore;
+    }
+
+    public int getnAuto() {
+        return nAuto;
+    }
+     
 
     
     @Override

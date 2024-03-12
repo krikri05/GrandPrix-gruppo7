@@ -25,15 +25,20 @@ public class Gestore {
     int s = -1;
     
     while (s != 0) {
-        visualizza();
-        s = sc.nextInt();
-    switch (s) {
+         try {
+                 Thread.sleep(3000);
+                 visualizza();
+             }catch (InterruptedException ex) {
+            Logger.getLogger(Gestore.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
+        s = sc.nextInt();
+    switch (s) { 
       case 1:
         Giocatore.accedi();
         break;
       case 2:
-       
+       Giocatore.autoepilota();
         break;
       case 3:
         Giudice.iniziogara();
@@ -45,12 +50,12 @@ public class Gestore {
     }
 
     public static void visualizza() {
-        System.out.println("*************************************************************************************");
+        System.out.println("\n*************************************************************************************");
         System.out.println("************************************GRAND PRIX***************************************");
         System.out.println("*************************************************************************************");
         System.out.println("Seleziona una di queste scelte:******************************************************");
         System.out.println("1)Accedi con username e password*****************************************************");
-        System.out.println("2)Impostazioni Circuito**************************************************************");
+        System.out.println("2)creazione piloti e macchine********************************************************");
         System.out.println("3)avvia gara*************************************************************************");
         System.out.println("0)chiudi*****************************************************************************");
         
