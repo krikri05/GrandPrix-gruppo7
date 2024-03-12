@@ -9,6 +9,10 @@ package com.mycompany.grandprix7;
  * @author Kristian
  */
 public class Pilota{
+
+    static void add(Pilota pilota) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private String nome;
     private String cognome;
     private int numeroPilota;

@@ -26,33 +26,33 @@ public class Gestore {
     
     while (s != 0) {
         visualizza();
-    s = sc.nextInt();
+        s = sc.nextInt();
     switch (s) {
+        
       case 1:
-      
         Giocatore.accedi();
         break;
       case 2:
-        Circuito.impostazioniCircuito();
+       
         break;
       case 3:
-        
+        Giudice.iniziogara();
         break;
+      case 0:
+          break;
     }
   }
     }
 
     public static void visualizza() {
-        Scanner input = new Scanner(System.in);
         System.out.println("*************************************************************************************");
         System.out.println("************************************GRAND PRIX***************************************");
         System.out.println("*************************************************************************************");
         System.out.println("Seleziona una di queste scelte:******************************************************");
         System.out.println("1)Accedi con username e password*****************************************************");
         System.out.println("2)Impostazioni Circuito**************************************************************");
-        System.out.println("3)avvia gara*****************************************************************************");
+        System.out.println("3)avvia gara*************************************************************************");
         System.out.println("0)chiudi*****************************************************************************");
-        int sc = input.nextInt();
         
     }
     
