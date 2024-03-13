@@ -113,6 +113,10 @@ public static void accedi() {
 
     
     }
+     public static void pulisciConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
    
     public static int getNauto(){
       return nAuto;
@@ -188,10 +192,26 @@ public static void accedi() {
                System.out.println("-----------------------------");
                System.out.println("Pilota " + (s + 1) + ": " + arrayPiloti[s]);
                System.out.println("-----------------------------");
+               arrayAuto[i].start();
     }
+           pulisciConsole();
+           try {
+               System.out.print("\nSTA PER INIZIARE ");
+               for(int p=0; p<5; p++){
+                   System.out.print(" 0");
+                   Thread.sleep(600);
+               }
+               pulisciConsole();
+               
+               System.out.println(" ◉ ◉ ◉ ◉ ◉");
+         
+         
+          
+        } catch (InterruptedException e) {
+        }
            
         }
-       
+     
       
        
                

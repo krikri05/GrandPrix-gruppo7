@@ -37,13 +37,12 @@ public class Automobile extends Thread {
      
     public void gareggia(){
      Random random = new Random();
-     
-
     }
     
+    
     @Override
-    public void run() {
-        
+    public void run(){
          gareggia();
     }
 }
+
