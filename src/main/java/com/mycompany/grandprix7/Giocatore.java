@@ -188,6 +188,7 @@ public static void accedi() {
         } catch (InterruptedException e) {
         }
            
+           
            for (int s = 0;  s< nAuto; s++) {
                System.out.println("-----------------------------");
                System.out.println("Pilota " + (s + 1) + ": " + arrayPiloti[s]);

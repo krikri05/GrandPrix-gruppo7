@@ -31,6 +31,7 @@ public class Automobile extends Thread {
         return colore;
     }
 
+    
     public int getnAuto() {
         return numeroAuto;
     }

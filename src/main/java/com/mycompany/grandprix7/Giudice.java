@@ -8,6 +8,7 @@ public class Giudice{
   private String classificaFinale;
   
   
+  
 public Giudice(String classificaFinale) {
     this.classificaFinale = classificaFinale;
     

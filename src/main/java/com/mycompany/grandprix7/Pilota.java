@@ -41,6 +41,7 @@ public class Pilota{
         return eta;
     }
     
+    
     @Override
 	public String toString() {
 		return nome+" "+cognome +" "+ numeroPilota + " "+eta;
