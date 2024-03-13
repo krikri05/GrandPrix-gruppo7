@@ -38,10 +38,10 @@ public class Gestore {
         Giocatore.accedi();
         break;
       case 2:
-       Giocatore.autoepilota();
+       Giocatore.creazione();
         break;
       case 3:
-        Giudice.iniziogara();
+        Giocatore.iniziogara();
         break;
       case 0:
           break;

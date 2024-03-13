@@ -4,6 +4,8 @@
  */
 package com.mycompany.grandprix7;
 
+import java.util.Random;
+
 /**
  *
  * @author Kristian
@@ -13,12 +15,12 @@ public class Automobile extends Thread {
     
     private String marca;
     private String colore;
-    private int nAuto;
+    private int numeroAuto;
 
     public Automobile(String colore, String marca, int nAuto) {
         this.marca = marca;
         this.colore = colore;
-        this.nAuto=nAuto;
+        this.numeroAuto=numeroAuto;
     }
 
     public String getMarca() {
@@ -30,13 +32,18 @@ public class Automobile extends Thread {
     }
 
     public int getnAuto() {
-        return nAuto;
+        return numeroAuto;
     }
      
+    public void gareggia(){
+     Random random = new Random();
+     
 
+    }
     
     @Override
     public void run() {
-    
+        
+         gareggia();
     }
 }

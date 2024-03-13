@@ -24,5 +24,25 @@ public class Pilota{
         this.numeroPilota = numeroPilota;
         this.eta = eta;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public int getNumeroPilota() {
+        return numeroPilota;
+    }
+
+    public int getEta() {
+        return eta;
+    }
     
+    @Override
+	public String toString() {
+		return nome+" "+cognome +" "+ numeroPilota + " "+eta;
+	}
 }

@@ -10,17 +10,19 @@ import java.util.logging.Logger;
 public class Giocatore {
     private String username;
     private int password;
-   ArrayList<Automobile> listaAuto = new ArrayList<>();
-   ArrayList<Pilota> listaPiloti = new ArrayList<>();
-   private static boolean accesso=false;
+    private static boolean accesso=false;
+    private static int nAuto;
+    private static Automobile[] arrayAuto = new Automobile[nAuto];
+    private static Pilota[] arrayPiloti = new Pilota[nAuto];
   
         
-    public Giocatore(final String username, final int password) {
+    public Giocatore(final String username, final int password, boolean accesso, int nAuto) {
         this.username = username;
         this.password = password;
-        this.listaAuto= new ArrayList();
-        this.listaPiloti= new ArrayList();
         this.accesso= accesso;
+        this.nAuto=nAuto;
+       
+      
         
     }
 public static void accedi() {
@@ -83,11 +85,12 @@ public static void accedi() {
         return accesso;
     }
     
-    public static void autoepilota(){
+    public static void creazione(){
      Scanner input = new Scanner(System.in);
      System.out.println("insersci il numero d'auto che vuoi far partecipare:");
-     int nAuto= Integer.valueOf(input.nextLine());
-      
+     nAuto= Integer.valueOf(input.nextLine());
+    arrayAuto = new Automobile[nAuto];
+    arrayPiloti = new Pilota[nAuto];
      for(int i=0; i<nAuto;i++){
          System.out.println("inserisci la marca dell'automobile:");
          String marca=input.nextLine();
@@ -102,13 +105,102 @@ public static void accedi() {
          System.out.println("inserisci eta del pilota:");
          int eta= Integer.valueOf(input.nextLine());
          
-         Automobile auto = new Automobile(marca, colore , numero);
+         Automobile auto = new Automobile(colore, marca , numero);
          Pilota pilota= new Pilota(nome, cognome, numero, eta);
-         
-          
+         arrayAuto[i] =  auto;
+         arrayPiloti[i] = pilota;
      }
+
+    
+    }
+   
+    public static int getNauto(){
+      return nAuto;
+        
     }
     
+    
+    public void gareggia(){
+        
+    }
+     public static void iniziaGara() {
+    for (int i = 0; i < nAuto; i++) {
+     
+    
+      
+    }
+  }
+     public static void iniziogara(){
+    if(Giocatore.isAccesso()==false){
+        try {
+         System.out.println("prima di poter accedere a questa sezione devi aver conseguito accesso");
+         Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+         
+       }else{
+       
+    Scanner sc = new Scanner(System.in);
+     try {
+          System.out.println("inseriamo le impostazioni di gara");
+         Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+    System.out.print("inserisci il nome del circuito: ");
+    String nomeCircuito=sc.nextLine();
+    System.out.print("inserisci la lunghezza del circuito espresso in km: ");
+    Double lunghezzaCircuito = sc.nextDouble();
+    System.out.print("Imposta il numero di giri: ");
+    int nGiri = sc.nextInt();
+    System.out.print("Imposta il numero di pit stop: ");
+    int nPit = sc.nextInt();
+    
+  try {
+          System.out.print("\nAVVIO GARA IN CORSO");
+          for(int s=0; s<7; s++){
+          Thread.sleep(700);
+          System.out.print(". ");
+          }           
+         
+        } catch (InterruptedException e) {
+        }
+        
+   for(int i=0; i<nGiri;i++){
+       if(i==0){
+           try {
+         System.out.print("\nSTA PER INIZIARE ");
+         Thread.sleep(1200);
+          System.out.print("IL GRAN PREMIO DI " + nomeCircuito);
+          Thread.sleep(1200);
+          System.out.print("\nIL CIRCUITO E' LUNGO " + lunghezzaCircuito +"km" );
+          Thread .sleep(1200);
+          System.out.print(" I PILOTI DOVRANNO EFFETUARE " + nGiri + " GIRI");
+          Thread.sleep(1200);
+          System.out.print("\nIN CUI SARANNO OBBLIGATI A  " + nPit +" PIT STOP\n" );
+          Thread.sleep(1200);
+         System.out.print("SCHIERIAMO IN GRIGLIA I PARTECIPANTI A QUESTAM GARA: ");
+          Thread.sleep(600);
+        } catch (InterruptedException e) {
+        }
+           
+           for (int s = 0;  s< nAuto; s++) {
+               System.out.println("-----------------------------");
+               System.out.println("Pilota " + (s + 1) + ": " + arrayPiloti[s]);
+               System.out.println("-----------------------------");
+    }
+           
+        }
+       
+      
+       
+               
+    }
+              
+
+           
+    }
+    }
+}
         
     
-}
